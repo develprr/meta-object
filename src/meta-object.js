@@ -1,8 +1,6 @@
 /*
 
-flattenObject function
-
-A Micro-library for flattening deeply nested objects.
+Testing out practical usage of dependencies in reusable libraries.
 
 Author: Heikki Kupiainen / Metamatic.net
 License: Apache 2.0

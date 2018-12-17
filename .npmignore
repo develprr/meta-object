@@ -1,8 +1,10 @@
 node_modules
 src
 test
+lib/test.spec.js
 package-lock.json
 gruntfile.js
+.eslintrc
 .idea
 .git
 .gitignore

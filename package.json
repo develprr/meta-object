@@ -4,7 +4,8 @@
   "description": "A general purpose utility library to perform useful conversions to data objects.",
   "main": "index.js",
   "scripts": {
-    "test": "grunt test -v"
+    "test": "grunt test -v",
+    "build": "grunt build -v"
   },
   "repository": {
     "type": "git",

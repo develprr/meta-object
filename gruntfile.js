@@ -11,11 +11,14 @@ module.exports = function gruntConfig(grunt) {
         sourceMap: true,
       },
       dist: {
-        files: {
-          'lib/meta-object.js': 'src/meta-object.js',
-          'test/test.spec.js': 'src/test.spec.js',
-          'test/meta-object.js': 'src/meta-object.js',
-        },
+        files: [
+          {
+            expand: true,
+            cwd: 'src/',
+            src: ['*.js'],
+            dest: 'lib/'
+          }
+        ]
       },
     },
 
@@ -24,7 +27,7 @@ module.exports = function gruntConfig(grunt) {
     },
 
     mochaTest: {
-      src: ['test/**/*.js'],
+      src: ['lib/**/*.js'],
       options: {
         reporter: 'spec',
         require: ['babel/register', 'should'],
@@ -44,4 +47,5 @@ module.exports = function gruntConfig(grunt) {
 
   grunt.registerTask('default', ['babel']);
   grunt.registerTask('test', ['eslint', 'babel', 'mochaTest']);
+  grunt.registerTask('build', ['test']);
 };

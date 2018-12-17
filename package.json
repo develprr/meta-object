@@ -1,6 +1,6 @@
 {
   "name": "@metamatic.net/meta-object",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "A general purpose utility library to perform useful conversions to data objects.",
   "main": "index.js",
   "scripts": {

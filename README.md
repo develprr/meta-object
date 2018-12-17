@@ -19,7 +19,7 @@ npm i @metamatic.net/meta-object
 ### flattenObject 
 
 ```js
-import {flattenObject} from 'meta-object'
+import {flattenObject} from '@metamatic.net/meta-object';
 
 const deepObject = {
   user: {
@@ -60,8 +60,7 @@ returns:
 example:
 
 ```js
-
-import {getNestedObject} from 'meta-object';
+import {getNestedObject} from '@metamatic.net/meta-object';
 
 const deepObject = {
   user: {

@@ -1,2 +1,3 @@
-module.exports = require('./lib/flattenObject.js');
-module.exports = require('./lib/getNestedObject.js');
+const flattenObject = require('./lib/flattenObject.js');
+const getNestedObject = require('./lib/getNestedObject.js');
+module.exports = Object.assign(flattenObject, getNestedObject);

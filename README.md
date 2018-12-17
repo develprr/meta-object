@@ -10,7 +10,8 @@ npm i @metamatic.net/meta-object
 
 ## Summary
 
-* [flattenObject](#flatten-object)
+* [flattenObject](#flattenobject)
+* [getNestedObject](#getnestedobject)
 
 
 ## Usage
@@ -18,7 +19,7 @@ npm i @metamatic.net/meta-object
 ### flattenObject 
 
 ```js
-import {flattenObject} from 'flatten-object'
+import {flattenObject} from 'meta-object'
 
 const deepObject = {
   user: {
@@ -44,6 +45,36 @@ The flattened object:
 }
 ```
 
+### getNestedObject 
+
+definition:
+* getNestedObject(object, string)
+
+params:
+* object: any associative array
+* string: path to nested object separated with dots
+
+returns:
+* object: an associative array from inside the parent object
+
+example:
+
+```js
+
+import {getNestedObject} from 'meta-object';
+
+const deepObject = {
+  user: {
+    username: 'jondoe',
+    kids: ['tim', 'kim', 'jim'],
+    address: {
+      streetAddress: 'Somestreet 1'
+    }
+  }
+};
+
+const streetAddress = getNestedObject(deepObject, 'user.adderss.streetAddress');
+```
 ## License 
 
 Apache 2.0

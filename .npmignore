@@ -1,7 +1,7 @@
 node_modules
 src
 test
-lib/test.spec.js
+lib
 package-lock.json
 gruntfile.js
 .eslintrc

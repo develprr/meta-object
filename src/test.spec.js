@@ -3,7 +3,6 @@ import {getNestedObject} from './getNestedObject';
 import {flattenObject} from './flattenObject';
 
 describe('flattenObject', () => {
-
   it('should convert deeply nested object to flat object', () => {
     const deepObject = {
       user: {

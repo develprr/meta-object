@@ -8,9 +8,14 @@ A general purpose utility library to perform useful conversions to data objects.
 npm i @metamatic.net/meta-object
 ```
 
+## Summary
+
+* [flattenObject](#flatten-object)
+
+
 ## Usage
 
-### Flattening deeply nested objects
+### flattenObject 
 
 ```js
 import {flattenObject} from 'flatten-object'

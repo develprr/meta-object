@@ -1,6 +1,6 @@
 {
   "name": "@metamatic.net/meta-object",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A general purpose utility library to perform useful conversions to data objects.",
   "main": "index.js",
   "scripts": {
@@ -42,8 +42,5 @@
   "directories": {
     "lib": "lib",
     "test": "test"
-  },
-  "dependencies": {
-    "@metamatic.net/flatten-object": "1.0.2"
   }
 }

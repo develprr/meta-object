@@ -1,5 +1,4 @@
 import {assert, describe, it} from 'mocha';
-import {delegateFlattenObject} from './meta-object';
 import {getNestedObject} from './getNestedObject';
 import {flattenObject} from './flattenObject';
 

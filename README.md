@@ -106,8 +106,8 @@ const array = [
   }
 ];
 
-const arrayDescendingByDescriptionProperty = sortAlphabeticallyByProperty(array, 'description', 'asc');
-const arrayAscendingByDescriptionProperty = sortAlphabeticallyByProperty(array, 'description', 'desc');
+const arrayDescendingByDescriptionProperty = sortAlphabeticallyByProperty(array, 'description', 'desc');
+const arrayAscendingByDescriptionProperty = sortAlphabeticallyByProperty(array, 'description', 'asc');
 ```
 
 ## License 

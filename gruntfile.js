@@ -7,10 +7,14 @@ module.exports = function gruntConfig(grunt) {
     pkg: grunt.file.readJSON('package.json'),
 
     concat: {
-      dist: {
-        src: ['lib/*.js', '!lib/*test.*.js'],
-        dest: 'index.js'
-      }
+      object: {
+        src: ['lib/object/*.js', '!lib/*test.*.js'],
+        dest: 'object.js'
+      },
+      array: {
+        src: ['lib/array/*.js', '!lib/*test.*.js'],
+        dest: 'array.js'
+      },
     },
 
     babel: {
@@ -22,7 +26,7 @@ module.exports = function gruntConfig(grunt) {
           {
             expand: true,
             cwd: 'src/',
-            src: ['*.js'],
+            src: ['**/*.js'],
             dest: 'lib/'
           }
         ]

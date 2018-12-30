@@ -31,4 +31,4 @@ const objectToPathmap = (object, evolvingPath, pathmap) => {
   return pathmap;
 }
 
-export const flattenObject = (object) => objectToPathmap(object, '', {});
+export const flatten = (object) => objectToPathmap(object, '', {});

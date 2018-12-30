@@ -10,16 +10,16 @@ npm i @metamatic.net/meta-object
 
 ## Summary
 
-* [flattenObject](#flattenobject)
+* [flatten](#flatten)
 * [getNestedObject](#getnestedobject)
 
 
-## Usage
+## Object conversions
 
-### flattenObject 
+### flatten 
 
 ```js
-import {flattenObject} from '@metamatic.net/meta-object';
+import {flatten} from '@metamatic.net/meta-object';
 
 const deepObject = {
   user: {
@@ -31,7 +31,7 @@ const deepObject = {
   }
 };
 
-const flatObject = flattenObject(deepObject);
+const flatObject = flatten(deepObject);
 ```
 
 The flattened object: 
@@ -74,6 +74,42 @@ const deepObject = {
 
 const streetAddress = getNestedObject(deepObject, 'user.adderss.streetAddress');
 ```
+
+## Array Conversions
+
+### sortAlphabeticallyByProperty
+
+definition:
+* sortAlphabeticallyByProperty(dataArray, property, sortDirection)
+
+params:
+* dataArray: array -> array of objects
+* property: string -> string that defines by which property objects in array are sorted 
+* sortDirection: string -> string that defins sort direction. Can have only value 'asc' or 'desc'
+
+returns:
+* array: sorted array
+
+example:
+
+```js
+import {sortAlphabeticallyByProperty} from '@metamatic.net/meta-object/array';
+
+const array = [
+  {
+    "name": "Spanish Basic Words",
+    "description": "Essential Spanish vocabularies for beginners"
+  },
+  {
+    "name": "Trappistian Basics",
+    "description": "Learn basics of the language spoken by our friends on Trappist 1e"
+  }
+];
+
+const arrayDescendingByDescriptionProperty = sortAlphabeticallyByProperty(array, 'description', 'asc');
+const arrayAscendingByDescriptionProperty = sortAlphabeticallyByProperty(array, 'description', 'desc');
+```
+
 ## License 
 
 Apache 2.0

@@ -1,7 +1,7 @@
 import {assert, describe, it} from 'mocha';
 import {getNestedObject} from './object/getNestedObject';
 import {flatten} from './object/flatten';
-import {sortAlphabeticallyByProperty} from './array/sortAlphabeticallyByProperty';
+import {sortAlphabeticallyByProperty, sortByProperty} from './array/sortByProperty';
 
 describe('flatten', () => {
   it('should convert deeply nested object to flat object', () => {
@@ -51,13 +51,13 @@ describe('array', () => {
 
     array = [
       {
-        "_id": 1,
+        "_id": 4,
         "_ownerId": 1,
         "name": "Spanish Basic Words",
         "description": "Essential Spanish vocabularies for beginners"
       },
       {
-        "_id": 2,
+        "_id": 1,
         "_ownerId": 1,
         "name": "Trappistian Basics",
         "description": "Learn basics of the language spoken by our friends on Trappist 1e"
@@ -69,19 +69,19 @@ describe('array', () => {
         "description": "Tagalog language basic words and phrases taken from Forrest Gump movie"
       },
       {
-        "_id": 4,
+        "_id": 6,
         "_ownerId": 1,
         "name": "Spanish Intermediate Vocabularies",
         "description": "Useful intermediate vocabularies"
       },
       {
-        "_id": 5,
+        "_id": 2,
         "_ownerId": 1,
         "name": "Spanish Conversational Phrases",
         "description": "Good packet with useful examples"
       },
       {
-        "_id": 6,
+        "_id": 5,
         "_ownerId": 1,
         "name": "Spanish Advanced Sentences",
         "description": "Learn to master Spanish with advanced phrases and sentences"
@@ -90,18 +90,30 @@ describe('array', () => {
   });
 
 
-  describe('sortAlphabeticallyByProperty', () => {
+  describe('sortByProperty', () => {
 
     it('should sort alphabetically ascending by name property', () => {
-      const resultArray = sortAlphabeticallyByProperty(array, 'name', 'asc');
+      const resultArray = sortByProperty(array, 'name', 'asc');
       resultArray.shift().name.should.equal('Learn Tagalog with Forrest');
       resultArray.pop().name.should.equal('Trappistian Basics');
     });
 
     it('should sort alphabetically descending by name property', () => {
-      const resultArray = sortAlphabeticallyByProperty(array, 'name', 'desc');
+      const resultArray = sortByProperty(array, 'name', 'desc');
       resultArray.shift().name.should.equal('Trappistian Basics');
       resultArray.pop().name.should.equal('Learn Tagalog with Forrest');
+    });
+
+    it('should sort numerically ascending by _id property', () => {
+      const resultArray = sortByProperty(array, '_id', 'asc');
+      resultArray.shift()._id.should.equal(1);
+      resultArray.pop()._id.should.equal(6);
+    });
+
+    it('should sort numerically descending by _id property', () => {
+      const resultArray = sortByProperty(array, '_id', 'desc');
+      resultArray.shift()._id.should.equal(6);
+      resultArray.pop()._id.should.equal(1);
     });
 
   });

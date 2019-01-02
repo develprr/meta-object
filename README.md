@@ -77,10 +77,10 @@ const streetAddress = getNestedObject(deepObject, 'user.adderss.streetAddress');
 
 ## Array Conversions
 
-### sortAlphabeticallyByProperty
+### sortByProperty
 
 definition:
-* sortAlphabeticallyByProperty(dataArray, property, sortDirection)
+* sortByProperty(dataArray, property, sortDirection)
 
 params:
 * dataArray: array -> array of objects
@@ -93,21 +93,27 @@ returns:
 example:
 
 ```js
-import {sortAlphabeticallyByProperty} from '@metamatic.net/meta-object/array';
+import {sortByProperty} from '@metamatic.net/meta-object/array';
 
 const array = [
   {
     "name": "Spanish Basic Words",
-    "description": "Essential Spanish vocabularies for beginners"
+    "description": "Essential Spanish vocabularies for beginners",
+    "count": 30
   },
   {
     "name": "Trappistian Basics",
-    "description": "Learn basics of the language spoken by our friends on Trappist 1e"
+    "description": "Learn basics of the language spoken by our friends on Trappist 1e",
+    "count": 15
   }
 ];
 
-const arrayDescendingByDescriptionProperty = sortAlphabeticallyByProperty(array, 'description', 'desc');
-const arrayAscendingByDescriptionProperty = sortAlphabeticallyByProperty(array, 'description', 'asc');
+const arrayDescendingByAlphabeticalProperty = sortByProperty(array, 'description', 'desc');
+const arrayAscendingByAlphabeticalProperty = sortByProperty(array, 'description', 'asc');
+
+const arrayDescendingByNumericProperty = sortByProperty(array, 'count', 'desc');
+const arrayAscendingByNumericProperty = sortByProperty(array, 'count', 'asc');
+
 ```
 
 ## License 

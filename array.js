@@ -3,19 +3,19 @@
 Object.defineProperty(exports, '__esModule', {
   value: true
 });
-var sortAlphabeticallyByProperty = function sortAlphabeticallyByProperty(array, property, sortDirection) {
+var sortByProperty = function sortByProperty(array, property, sortDirection) {
   return array.sort(function (a, b) {
     var sortDirectionSwapper = sortDirection === 'desc' ? -1 : 1;
-    var nameA = a[property].toLowerCase();
-    var nameB = b[property].toLowerCase();
-    if (nameA < nameB) {
+    var valueA = a[property];
+    var valueB = b[property];
+    if (valueA < valueB) {
       return -1 * sortDirectionSwapper;
     }
-    if (nameA > nameB) {
+    if (valueA > valueB) {
       return 1 * sortDirectionSwapper;
     }
     return 0;
   });
 };
-exports.sortAlphabeticallyByProperty = sortAlphabeticallyByProperty;
-//# sourceMappingURL=sortAlphabeticallyByProperty.js.map
+exports.sortByProperty = sortByProperty;
+//# sourceMappingURL=sortByProperty.js.map
